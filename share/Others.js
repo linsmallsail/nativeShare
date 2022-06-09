@@ -13,7 +13,6 @@ export default class Others extends Share {
     if (!navigator.share) {
       command = String(command).toLowerCase()
       if (command === weibo) {
-        alert('weibo')
         shareToWeibo4Web()
       } else {
         if (command === qqFriend) {
@@ -21,8 +20,7 @@ export default class Others extends Share {
         } else if (command === qZone) {
           shareToQZone()
         }
-        alert('other Error')
-        throw new Error(`the browser may not support command ${command}!`)
+        // throw new Error(`the browser may not support command ${command}!`)
       }
       return
     }
@@ -35,10 +33,9 @@ export default class Others extends Share {
     }
     
     try {
-      alert('other-try')
       navigator.share(queryObj).then(shareData.success).catch(shareData.fail)
     } catch (error) {
-      alert('other-catch')
+      // alert('other-catch')
     }
   }
 }

@@ -27,7 +27,6 @@ export default class QQMobileBrowser extends Share {
 
   constructor(config) {
     super(config)
-    alert('super')
     loadJs('https://jsapi.qq.com/get?api=app.share')
   }
 

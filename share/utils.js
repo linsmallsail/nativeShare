@@ -15,13 +15,11 @@ const isSogouMBrowser = /SogouMobileBrowser/i.test(UA)
 const isBaiduApp = /baiduboxapp/i.test(UA)
 
 function noop() {
-  alert('noop')
+  // alert('noop')
 }
 
 function fail() {
-  alert('noop,err')
-  // 分享失败，唤起微信app
-  // location.href = 'weixin://'
+  // alert('noop,err')
 }
 
 function loadJs(src, callback = noop) {
