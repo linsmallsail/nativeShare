@@ -36,13 +36,17 @@ export default class QQMobileBrowser extends Share {
     const toApp = this.constructor.commamdMap[String(command).toLowerCase()]
     // alert('-' + browser.app.share)
     // alert('-' + toApp)
-    browser.app.share({
-      title: shareData.title,
-      description: shareData.desc,
-      url: shareData.link,
-      img_url: shareData.icon,
-      from: shareData.from,
-      to_app: toApp,
-    })
+    try {
+      browser.app.share({
+        title: shareData.title,
+        description: shareData.desc,
+        url: shareData.link,
+        img_url: shareData.icon,
+        from: shareData.from,
+        to_app: toApp,
+      })
+    } catch (error) {
+      location.href = 'weixin://'
+    }
 }
 }
